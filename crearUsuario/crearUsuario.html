@@ -12,30 +12,61 @@
 </head>
 
 <body>
-    <header>
+    <form class="contenedor-formulario" id="formulario" autocomplete="off">
         <h1 class="title">Crear nuevo usuario</h1>
-    </header>
-    <form id="formulario">
-        <input name="documentoIdentidad" placeholder="Documento identidad" type='text'>
+        <p class="warning" id="warning-documento">Ingrese un numero de documento valido</p>
+        <input id="documento" name="documentoIdentidad" placeholder="Documento identidad" type='number'>
 
-        <input name="nombre" placeholder="Nombre" type='text'>
+        <p class="warning" id="warning-nombre">Verifique el nombre de el cliente</p>
+        <input id="nombre" name="nombre" placeholder="Nombre" type='text'>
 
         <input name="apellido" placeholder="Apellido" type='text'>
 
-        <input name="correoElectronico" placeholder="Email" type='email'>
+        <p class="warning" id="warning-correo">Por favor ingrese un correo electronico valido</p>
+        <input id="correo" name="correoElectronico" placeholder="Email" type='email'>
 
         <input name="direccion" placeholder="Direccion" type='text'>
 
-        <input name="fechaDeNacimiento" placeholder="Fecha de nacimiento" type='date'>
+        <input name="telefono1" placeholder="Telefono 1" type='number'>
 
-        <input name="telefono1" placeholder="Telefono 1" type='text'>
+        <input name="telefono2" placeholder="Telefono 2" type='number'>
 
-        <input name="telefono2" placeholder="Telefono 2" type='text'>
+        <input id="input-fecha" name="fechaDeNacimiento" type='date'>
 
-        <button type="submit">
+        <!-- <input type="file"> -->
+
+        <div class="contenedor-check">
+            <p>persona</p>
+            <label id="persona">
+                <p>
+                    Juridica
+                    <input id="juridica" type="radio" name="persona">
+                </p>
+                <p>
+                    Natural
+                    <input id="natural" type="radio" name="persona">
+                </p>
+            </label>
+        </div>
+
+        <div class="contenedor-juridica" id="persona-juridica">
+
+            <input id="empresa" type="text" placeholder="Empresa" name="empresa">
+
+            <input id="nit" type="number" placeholder="Nit" name="nit">
+        </div>
+
+        <button class="btn-form" type="submit">
             Crear usuario
         </button>
+
     </form>
+    <div class="contenedor-alert" id="overlay-alert">
+        <div class="alert">
+            <h3>Usuario creado con exito</h3>
+            <button id="btn-alert">aceptar</button>
+        </div>
+    </div>
     <script src="./crearUsuario.js"></script>
 </body>
 

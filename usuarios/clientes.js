@@ -4,7 +4,7 @@ const BACKEND_LOCAL = 'http://localhost:3001/clientes'
 const HTMLResponse = document.querySelector("#app");
 const ul = document.createElement("ul");
 
-fetch(URL_BACKEND)
+fetch(BACKEND_LOCAL)
   .then((response) => response.json())
   .then((users) => {
     users.forEach((user) => {
