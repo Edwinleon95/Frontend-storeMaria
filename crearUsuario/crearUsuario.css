@@ -1,0 +1,29 @@
+:root{
+    --color1:#223773;
+    --color2:#048ABF;
+    --color3:#049DBF;
+    --color4:#4EBFD9;
+    --color5:#F2B705;
+    --titulos: 'Fredoka One', cursive;
+    --texto: 'Josefin Slab', serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--color5);
+}
+
+.title{
+    font-family: var(--titulos);
+    font-size: 50px;
+}
+
+#formulario{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
