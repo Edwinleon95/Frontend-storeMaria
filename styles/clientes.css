@@ -1,0 +1,130 @@
+:root{
+   --color1:#223773;
+   --color2:#048ABF;
+   --color3:#049DBF;
+   --color4:#4EBFD9;
+   --color5:#F2B705;
+   --titulos: 'Fredoka One', cursive;
+   --texto: 'Josefin Slab', serif;
+}
+
+body {
+   background-color: var(--color1);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.title{
+   font-family: var(--titulos);
+   font-size: 50px;
+   color: #fff;
+}
+
+.header-tabla{
+   display: flex;
+   background-color: var(--color5);
+   font-family: var(--titulos);
+   color: #fff;
+   font-weight: 0;
+}
+
+.header-tabla h4{
+   padding: 4px;
+   margin: 0;
+   width: 100px;
+   border: 1px solid black;
+}
+
+.header-tabla h4:nth-child(2){
+   width: 200px;
+}
+
+.header-tabla h4:nth-child(4){
+   width: 200px;
+}
+.contenedor-clientes{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+.contenedor-clientes div{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-family: var(--texto);
+   font-size: 18px;
+   font-weight: 900;
+}
+
+.contenedor-clientes div:nth-child(odd){
+background-color: var(--color4);
+}
+
+.contenedor-clientes div:nth-child(odd):hover{
+   background-color: var(--color2);
+   color: #fff;
+}
+
+.contenedor-clientes div:nth-child(even){
+   background-color: var(--color3);
+}
+      
+.contenedor-clientes div:nth-child(even):hover{
+   background-color: var(--color2);
+   color: #fff;
+}
+
+
+.contenedor-clientes p{
+   padding: 4px;
+   margin: 0;
+   width: 100px;
+   border: 1px solid black;
+}
+
+.contenedor-clientes p:nth-child(2){
+   width: 200px;
+}
+
+.contenedor-clientes p:nth-child(4){
+   width: 200px;
+}
+
+
+.btn-nuevo-cliente{
+   margin: 8px;
+   padding: 4px;
+   border: none;
+   width: 100px;
+   height: 30px;
+   border-radius: 10px;
+   background-color: var(--color2);
+   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .5);
+   font-family: var(--titulos);
+   color: #fff;
+}
+
+.btn-nuevo-cliente:hover{
+ background-color: var(--color4);
+ box-shadow: none;
+ color: #000;
+}
+
+.overlay-post{
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 0, 0, .5);
+   top: 0;
+}
+
+.overlay-post-on{
+   display: flex;
+}

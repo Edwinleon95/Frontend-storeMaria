@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Josefin+Slab:ital,wght@1,200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/clientes.css">
+    <link rel="stylesheet" href="styles/overlayPost.css">
+</head>
+
+<body>
+    <header>
+        <h1 class="title">Clientes</h1>
+    </header>
+    <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button>
+    <div class="contenedor-clientes" id="app">
+        <section class="header-tabla">
+            <h4>Documento</h4>
+            <h4>Nombre</h4>
+            <h4>Apellido</h4>
+            <h4>Correo</h4>
+            <h4>Telefono1</h4>
+            <h4>Telefono2</h4>
+            <h4>Fecha</h4>
+            <h4>Persona</h4>
+            <h4>Empresa</h4>
+            <h4>Nit</h4>
+        </section>
+    </div>
+    <div class="overlay-post" id="overlay-post">
+        <form class="contenedor-formulario" id="formulario" autocomplete="off">
+            <h1 class="title">Crear nuevo usuario</h1>
+            <p class="warning" id="warning-documento">Ingrese un numero de documento valido</p>
+            <input id="documento" name="documentoIdentidad" placeholder="Documento identidad*" type='number'>
+
+            <p class="warning" id="warning-nombre">Verifique el nombre de el cliente</p>
+            <input id="nombre" name="nombre" placeholder="Nombre*" type='text'>
+
+            <input name="apellido" placeholder="Apellido" type='text'>
+
+            <p class="warning" id="warning-correo">Por favor ingrese un correo electronico valido</p>
+            <input id="correo" name="correoElectronico" placeholder="Email*" type='email'>
+
+            <input name="direccion" placeholder="Direccion" type='text'>
+
+            <input name="telefono1" placeholder="Telefono 1" type='number'>
+
+            <input name="telefono2" placeholder="Telefono 2" type='number'>
+
+            <input id="input-fecha" name="fechaDeNacimiento" type='date'>
+
+            <!-- <input type="file"> -->
+
+            <div class="contenedor-check">
+                <p>persona</p>
+                <label id="persona">
+                    <p>
+                        Juridica
+                        <input id="juridica" type="radio" name="persona">
+                    </p>
+                    <p>
+                        Natural
+                        <input id="natural" type="radio" name="persona">
+                    </p>
+                </label>
+            </div>
+
+            <div class="contenedor-juridica" id="persona-juridica">
+
+                <input id="empresa" type="text" placeholder="Empresa" name="empresa">
+
+                <input id="nit" type="number" placeholder="Nit" name="nit">
+            </div>
+
+            <button class="btn-form" type="submit">
+                Crear usuario
+            </button>
+
+        </form>
+        <div class="contenedor-alert" id="overlay-alert">
+            <div class="alert">
+                <h3>Usuario creado con exito</h3>
+                <button id="btn-alert">aceptar</button>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button> -->
+    <script src="Js/getClientes.js" type="module"></script>
+    <script src="Js/PostClientes.js"> </script>
+</body>
+
+</html>
