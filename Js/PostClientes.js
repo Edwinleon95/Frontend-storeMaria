@@ -102,7 +102,7 @@ formulario.addEventListener("submit", (e) => {
       nit: nit,
     };
 
-    fetch(BACKEND_LOCAL, {
+    fetch(URL_BACKEND, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),

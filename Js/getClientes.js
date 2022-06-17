@@ -3,7 +3,7 @@ const BACKEND_LOCAL = "http://localhost:3001/clientes";
 
 const HTMLResponse = document.querySelector("#app");
 
-fetch(BACKEND_LOCAL)
+fetch(URL_BACKEND)
   .then((response) => response.json())
   .then((users) => {
     users.forEach((user) => {
