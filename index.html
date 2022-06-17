@@ -29,10 +29,25 @@
             <h4>Persona</h4>
             <h4>Empresa</h4>
             <h4>Nit</h4>
+            <h4>borrar</h4>
         </section>
     </div>
+
+    <div class="contenedor-alert-delete" id="overlay-alert-delete">
+        <div >
+            <h3>¿deseas eliminar al usuario?</h3>
+            <section>
+                <button id="btn-confirm">aceptar</button>
+                <button id="btn-cancel">cancelar</button>
+            </section>
+        </div>
+    </div>
+
     <div class="overlay-post" id="overlay-post">
         <form class="contenedor-formulario" id="formulario" autocomplete="off">
+            <div class="contenedor-btn-overlay-off">
+                <button id="overlay-post-off">X</button>
+            </div>
             <h1 class="title">Crear nuevo usuario</h1>
             <p class="warning" id="warning-documento">Ingrese un numero de documento valido</p>
             <input id="documento" name="documentoIdentidad" placeholder="Documento identidad*" type='number'>
@@ -81,6 +96,7 @@
             </button>
 
         </form>
+
         <div class="contenedor-alert" id="overlay-alert">
             <div class="alert">
                 <h3>Usuario creado con exito</h3>
@@ -91,6 +107,7 @@
     <!-- <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button> -->
     <script src="Js/getClientes.js" type="module"></script>
     <script src="Js/PostClientes.js"> </script>
+    <script src="Js/deleteClientes.js"></script>
 </body>
 
 </html>

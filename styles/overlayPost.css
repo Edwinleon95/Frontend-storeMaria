@@ -184,3 +184,31 @@
     background-color: var(--color1);
     box-shadow: none;
 }
+
+/* /////// */
+/* btn overlay off */
+/* /////// */
+
+.contenedor-btn-overlay-off{
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+}
+
+.contenedor-btn-overlay-off button{
+    cursor: pointer;
+    font-family: var(--titulos);
+    font-size: 25px;
+    background-color: var(--color5);
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .5);
+}
+
+.contenedor-btn-overlay-off button:hover{
+    background-color: var(--color4);
+    box-shadow: none;
+    color: #fff;
+}

@@ -94,6 +94,27 @@ background-color: var(--color4);
    width: 200px;
 }
 
+.contenedor-clientes div div{
+   padding: 4px;
+   margin: 0;
+   width: 100px;
+   border: 1px solid black;
+}
+
+.contenedor-clientes div div button{
+   cursor: pointer;
+   padding: 2px;
+   margin: 0;
+   background-color: red;
+   border: none;
+   width: 100%;
+   border-radius: 10px;
+   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .5);
+}
+
+.contenedor-clientes div div button:hover{
+   background-color: var(--color5);   
+}
 
 .btn-nuevo-cliente{
    margin: 8px;
@@ -127,4 +148,59 @@ background-color: var(--color4);
 
 .overlay-post-on{
    display: flex;
+}
+
+/* //////////////////// */
+/* overlay-alert-delete */
+
+.contenedor-alert-delete{
+   position: absolute;
+   top: 0;
+   height: 100vh;
+   width: 100%;
+   display: none;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 0, 0, .5);
+}
+
+.contenedor-alert-delete div {
+   margin: auto;
+    width: 30%;
+    height: 20vh;
+    border-radius: 20px;
+    background-color: var(--color4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contenedor-alert-delete div h3{
+   font-family: var(--titulos);
+    color: #fff;
+    font-size: 30px;
+}
+
+.contenedor-alert-delete section button{
+   cursor: pointer;
+   border: none;
+   width: 100px;
+   height: 30px;
+   font-family: var(--titulos);
+   border-radius: 10px;
+   font-size: 20px;
+}
+
+.contenedor-alert-delete section button:hover{
+   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, .5);
+}
+
+.contenedor-alert-delete section button:nth-child(1){
+   background-color: red;
+}
+
+.contenedor-alert-delete section button:nth-child(2){
+   background-color: var(--color1);
+   color: #fff;
 }

@@ -1,5 +1,5 @@
-const BACKEND_LOCAL = "http://localhost:3001/clientes";
-const URL_BACKEND = "https://storemaria01.herokuapp.com/clientes";
+const BACKEND_LOCAL_POST = "http://localhost:3001/clientes";
+const URL_BACKEND_POST = "https://storemaria01.herokuapp.com/clientes";
 
 //Validacion  input Nombre
 let inputNombre = document.getElementById("nombre");
@@ -102,7 +102,7 @@ formulario.addEventListener("submit", (e) => {
       nit: nit,
     };
 
-    fetch(URL_BACKEND, {
+    fetch(URL_BACKEND_POST, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
@@ -121,3 +121,11 @@ formulario.addEventListener("submit", (e) => {
       });
   }
 });
+
+
+//Cerrar overlay
+ let overlayOff = document.getElementById('overlay-post-off');
+ overlayOff.addEventListener('click',(e)=>{
+  e.preventDefault()
+  document.getElementById('overlay-post').classList.remove('overlay-post-on')
+ })

@@ -1,28 +1,33 @@
-const URL_BACKEND = "https://storemaria01.herokuapp.com/clientes";
-const BACKEND_LOCAL = "http://localhost:3001/clientes";
+const BACKEND_LOCAL_GET = "http://localhost:3001/clientes/";
+const URL_BACKEND_GET = "https://storemaria01.herokuapp.com/clientes";
 
 const HTMLResponse = document.querySelector("#app");
 
-fetch(URL_BACKEND)
+//peticion get para rederizar los clientes en la base de datos
+fetch(`${URL_BACKEND_GET}true`)
   .then((response) => response.json())
   .then((users) => {
     users.forEach((user) => {
       const div = document.createElement("div");
-      // console.log(user.id)
-      div.setAttribute('id',`${user.id}`)
 
       const documento = document.createElement("p");
       documento.appendChild(
         document.createTextNode(`${user.documentoIdentidad}`)
       );
       div.appendChild(documento);
-        
+
       const nombre = document.createElement("p");
       nombre.appendChild(document.createTextNode(`${user.nombre}`));
       div.appendChild(nombre);
 
       const apellido = document.createElement("p");
-      apellido.appendChild(document.createTextNode(`${user.apellido}`));
+      apellido.appendChild(
+        document.createTextNode(
+          `${
+            user.apellido === null || user.apellido === "" ? "." : user.apellido
+          }`
+        )
+      );
       div.appendChild(apellido);
 
       const correo = document.createElement("p");
@@ -33,8 +38,8 @@ fetch(URL_BACKEND)
       telefono1.appendChild(
         document.createTextNode(
           `${
-            user.telefonosCelulares === null
-              ? "#"
+            user.telefonosCelulares === null || user.telefonosCelulares[0] === ""
+              ? "."
               : user.telefonosCelulares[0]
           }`
         )
@@ -45,8 +50,8 @@ fetch(URL_BACKEND)
       telefono2.appendChild(
         document.createTextNode(
           `${
-            user.telefonosCelulares === null
-              ? "#"
+            user.telefonosCelulares === null || user.telefonosCelulares[1] === ''
+              ? "."
               : user.telefonosCelulares[1]
           }`
         )
@@ -63,7 +68,12 @@ fetch(URL_BACKEND)
       tipoPersona.appendChild(
         document.createTextNode(
           `${
-            user.empresa === '' || user.nit === '' ? "Natural" : "Juridica"
+            user.empresa === "" ||
+            user.nit === "" ||
+            user.empresa === null ||
+            user.nit === null
+              ? "Natural"
+              : "Juridica"
           }`
         )
       );
@@ -72,7 +82,7 @@ fetch(URL_BACKEND)
       const empresa = document.createElement("p");
       empresa.appendChild(
         document.createTextNode(
-          `${user.empresa === '' ? '.' : user.empresa}`
+          `${user.empresa === "" || user.empresa === null ? "." : user.empresa}`
         )
       );
       div.appendChild(empresa);
@@ -80,24 +90,25 @@ fetch(URL_BACKEND)
       const nit = document.createElement("p");
       nit.appendChild(
         document.createTextNode(
-          `${user.nit === '' ? '.' : user.nit}`
+          `${user.nit === "" || user.nit === null ? "." : user.nit}`
         )
       );
       div.appendChild(nit);
+
+      const contenedorBtn = document.createElement("div");
+      const id = document.createElement("button");
+      contenedorBtn.appendChild(id).setAttribute("id", user.id);
+      id.appendChild(document.createTextNode(`Eliminar`));
+      div.appendChild(contenedorBtn);
 
       HTMLResponse.appendChild(div);
     });
   });
 
-  console.log()
+// abrir overlay de post nuevos clientes
+document.getElementById("swicth-overlay").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("overlay-post").classList.add("overlay-post-on");
+});
 
 
-  document.getElementById('swicth-overlay').addEventListener('click',(e)=>{
-    e.preventDefault();
-    document.getElementById('overlay-post').classList.add('overlay-post-on')
-  })
-
-document.getElementById('app').addEventListener('click', (e)=>{
-  e.preventDefault()
-  console.log(e.target.id)
-})
