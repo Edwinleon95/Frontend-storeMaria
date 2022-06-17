@@ -1,6 +1,6 @@
 
 const BACKEND_LOCAL_DELETE = "http://localhost:3001/clientes/";
-const URL_BACKEND_DELETE = "https://storemaria01.herokuapp.com/clientes";
+const URL_BACKEND_DELETE = "https://storemaria01.herokuapp.com/clientes/";
 
 let regexId = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/;
 document.getElementById("app").addEventListener("click", (e) => {

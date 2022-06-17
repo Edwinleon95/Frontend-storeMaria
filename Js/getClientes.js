@@ -1,5 +1,5 @@
 const BACKEND_LOCAL_GET = "http://localhost:3001/clientes/";
-const URL_BACKEND_GET = "https://storemaria01.herokuapp.com/clientes";
+const URL_BACKEND_GET = "https://storemaria01.herokuapp.com/clientes/";
 
 const HTMLResponse = document.querySelector("#app");
 

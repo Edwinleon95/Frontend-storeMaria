@@ -1,5 +1,5 @@
 const BACKEND_LOCAL_POST = "http://localhost:3001/clientes";
-const URL_BACKEND_POST = "https://storemaria01.herokuapp.com/clientes";
+const URL_BACKEND_POST = "https://storemaria01.herokuapp.com/clientes/";
 
 //Validacion  input Nombre
 let inputNombre = document.getElementById("nombre");
