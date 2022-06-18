@@ -110,7 +110,7 @@ formulario.addEventListener("submit", (e) => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          document.getElementById("overlay-alert").classList.add("open");
+          document.getElementById("overlay-alert").classList.add("open-overlay");
           document
             .getElementById("btn-alert")
             .addEventListener("click", (event) => {
@@ -126,5 +126,5 @@ formulario.addEventListener("submit", (e) => {
 let overlayOff = document.getElementById("overlay-post-off");
 overlayOff.addEventListener("click", (e) => {
   e.preventDefault();
-  document.getElementById("overlay-post").classList.remove("overlay-post-on");
+  document.getElementById("overlay-post").classList.remove("open-overlay");
 });

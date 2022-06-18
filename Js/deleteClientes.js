@@ -7,13 +7,13 @@ document.getElementById("app").addEventListener("click", (e) => {
   let idCliente = e.target.id;
   if (idCliente.match(regexId)) {
     let overlay = document.getElementById("overlay-alert-delete");
-    overlay.classList.add("open");
+    overlay.classList.add("open-overlay");
 
     let cancelOrDelete = (event) => {
       let idBtn = event.target.id;
 
       if (idBtn === "btn-cancel") {
-        overlay.classList.remove("open");
+        overlay.classList.remove("open-overlay");
         overlay.removeEventListener("click", cancelOrDelete);
       }
 
@@ -30,7 +30,7 @@ document.getElementById("app").addEventListener("click", (e) => {
       }
 
       if (idBtn === "btn-edit") {
-        document.getElementById("overlay-edit").classList.add("open");
+        document.getElementById("overlay-edit").classList.add("open-overlay");
 
         document
           .getElementById("off-overlay-edit")

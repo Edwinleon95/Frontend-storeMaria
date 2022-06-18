@@ -9,14 +9,14 @@
 }
 
 .contenedor-formulario{
-    color: #fff;
-    height: 90vh;
-    width: 50%;
-    background-color: var(--color1);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #fff;
+    height: 90vh;
+    width: 50%;
+    background-color: var(--color1);
     gap: 12px;
     box-shadow:0px 0px 50px 5px rgba(0, 0, 0, 0.9);
     border-radius: 50px;
@@ -143,27 +143,6 @@
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
     display: none;
-}
-
-.open{
-    display: flex;
-}
-.alert{
-    margin: auto;
-    width: 30%;
-    height: 20vh;
-    border-radius: 20px;
-    background-color: var(--color4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.alert h3{
-    font-family: var(--titulos);
-    color: #fff;
-    font-size: 30px;
 }
 
 .alert button{

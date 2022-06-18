@@ -101,7 +101,7 @@ fetch(`${URL_BACKEND_GET}true`)
       const contenedorBtn = document.createElement("div");
       const id = document.createElement("button");
       contenedorBtn.appendChild(id).setAttribute("id", user.id);
-      id.appendChild(document.createTextNode(`Eliminar`));
+      id.appendChild(document.createTextNode(`Editar o Eliminar`));
       div.appendChild(contenedorBtn);
 
       HTMLResponse.appendChild(div);
@@ -111,5 +111,5 @@ fetch(`${URL_BACKEND_GET}true`)
 // abrir overlay de post nuevos clientes
 document.getElementById("swicth-overlay").addEventListener("click", (e) => {
   e.preventDefault();
-  document.getElementById("overlay-post").classList.add("overlay-post-on");
+  document.getElementById("overlay-post").classList.add("open-overlay");
 });

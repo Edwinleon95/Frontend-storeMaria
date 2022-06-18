@@ -14,11 +14,13 @@
 
 <body>
     <header>
-        <h1 class="title">Clientes</h1>
+        <h1 class="titles">Gestión de clientes</h1>
     </header>
+
     <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button>
+
     <div class="contenedor-clientes" id="app">
-        <section class="header-tabla">
+        <div>
             <h4>Documento</h4>
             <h4>Nombre</h4>
             <h4>Apellido</h4>
@@ -29,12 +31,12 @@
             <h4>Persona</h4>
             <h4>Empresa</h4>
             <h4>Nit</h4>
-            <h4>borrar</h4>
-        </section>
+            <h4></h4>
+        </div>
     </div>
 
-    <div class="contenedor-alert-delete" id="overlay-alert-delete">
-        <div>
+    <div class="contenedor-overlay" id="overlay-alert-delete">
+        <div class="alert-options">
             <section class="contenedor-btn-cancel">
                 <button class="btn-cancel" id="btn-cancel">X</button>
             </section>
@@ -50,7 +52,7 @@
 
 
 
-    <div class="contenedor-overlay-edit" id="overlay-edit">
+    <div class="contenedor-overlay" id="overlay-edit">
         <form class="contenedor-formulario" id="contenedor-form-edit" autocomplete="off">
             <div class="contenedor-btn-overlay-off">
                 <button id="off-overlay-edit">X</button>
@@ -80,17 +82,14 @@
             <input id="nit-edit" type="number" placeholder="Nit" name="nit">
 
             <button class="btn-form" type="submit">
-                Crear usuario
+                Editar usuario
             </button>
         </form>
     </div>
 
 
-
-
-
-
-    <div class="overlay-post" id="overlay-post">
+    
+    <div class="contenedor-overlay" id="overlay-post">
         <form class="contenedor-formulario" id="formulario" autocomplete="off">
             <div class="contenedor-btn-overlay-off">
                 <button id="overlay-post-off">X</button>
@@ -144,7 +143,7 @@
 
         </form>
 
-        <div class="contenedor-alert" id="overlay-alert">
+        <div class="contenedor-overlay" id="overlay-alert">
             <div class="alert">
                 <h3>Usuario creado con exito</h3>
                 <button id="btn-alert">aceptar</button>
