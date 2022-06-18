@@ -1,4 +1,4 @@
-const BACKEND_LOCAL_GET = "http://localhost:3001/clientes/";
+// const BACKEND_LOCAL_GET = "http://localhost:3001/clientes/";
 const URL_BACKEND_GET = "https://storemaria01.herokuapp.com/clientes/";
 
 const HTMLResponse = document.querySelector("#app");
@@ -9,6 +9,7 @@ fetch(`${URL_BACKEND_GET}true`)
   .then((users) => {
     users.forEach((user) => {
       const div = document.createElement("div");
+      div.setAttribute("id", user.id);
 
       const documento = document.createElement("p");
       documento.appendChild(
@@ -38,7 +39,8 @@ fetch(`${URL_BACKEND_GET}true`)
       telefono1.appendChild(
         document.createTextNode(
           `${
-            user.telefonosCelulares === null || user.telefonosCelulares[0] === ""
+            user.telefonosCelulares === null ||
+            user.telefonosCelulares[0] === ""
               ? "."
               : user.telefonosCelulares[0]
           }`
@@ -50,7 +52,8 @@ fetch(`${URL_BACKEND_GET}true`)
       telefono2.appendChild(
         document.createTextNode(
           `${
-            user.telefonosCelulares === null || user.telefonosCelulares[1] === ''
+            user.telefonosCelulares === null ||
+            user.telefonosCelulares[1] === ""
               ? "."
               : user.telefonosCelulares[1]
           }`
@@ -110,5 +113,3 @@ document.getElementById("swicth-overlay").addEventListener("click", (e) => {
   e.preventDefault();
   document.getElementById("overlay-post").classList.add("overlay-post-on");
 });
-
-

@@ -1,4 +1,4 @@
-const BACKEND_LOCAL_POST = "http://localhost:3001/clientes";
+// const BACKEND_LOCAL_POST = "http://localhost:3001/clientes";
 const URL_BACKEND_POST = "https://storemaria01.herokuapp.com/clientes/";
 
 //Validacion  input Nombre
@@ -122,10 +122,9 @@ formulario.addEventListener("submit", (e) => {
   }
 });
 
-
 //Cerrar overlay
- let overlayOff = document.getElementById('overlay-post-off');
- overlayOff.addEventListener('click',(e)=>{
-  e.preventDefault()
-  document.getElementById('overlay-post').classList.remove('overlay-post-on')
- })
+let overlayOff = document.getElementById("overlay-post-off");
+overlayOff.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("overlay-post").classList.remove("overlay-post-on");
+});

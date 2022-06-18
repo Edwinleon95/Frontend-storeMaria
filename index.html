@@ -34,14 +34,61 @@
     </div>
 
     <div class="contenedor-alert-delete" id="overlay-alert-delete">
-        <div >
-            <h3>¿deseas eliminar al usuario?</h3>
+        <div>
+            <section class="contenedor-btn-cancel">
+                <button class="btn-cancel" id="btn-cancel">X</button>
+            </section>
+            <h3>¿Seleccione una opcion?</h3>
             <section>
-                <button id="btn-confirm">aceptar</button>
-                <button id="btn-cancel">cancelar</button>
+                <button id="btn-confirm">eliminar</button>
+                <button id="btn-edit">editar</button>
             </section>
         </div>
     </div>
+
+
+
+
+
+    <div class="contenedor-overlay-edit" id="overlay-edit">
+        <form class="contenedor-formulario" id="contenedor-form-edit" autocomplete="off">
+            <div class="contenedor-btn-overlay-off">
+                <button id="off-overlay-edit">X</button>
+            </div>
+            <h1 class="title">Crear nuevo usuario</h1>
+            <p class="warning">Ingrese un numero de documento valido</p>
+            <input id="documento-edit" name="documentoIdentidad" placeholder="Documento identidad*" type='number'>
+
+            <p class="warning">Verifique el nombre de el cliente</p>
+            <input id="nombre-edit" name="nombre" placeholder="Nombre*" type='text'>
+
+            <input id="apellido-edit" name="apellido" placeholder="Apellido" type='text'>
+
+            <p class="warning">Por favor ingrese un correo electronico valido</p>
+            <input id="correo-edit" name="correoElectronico" placeholder="Email*" type='email'>
+
+            <input id="direccion-edit" name="direccion" placeholder="Direccion" type='text'>
+
+            <input id="telefono1-edit" name="telefono1" placeholder="Telefono 1" type='number'>
+
+            <input id="telefono2-edit" name="telefono2" placeholder="Telefono 2" type='number'>
+
+            <input id="fecha-edit" name="fechaDeNacimiento" type='date'>
+
+            <input id="empresa-edit" type="text" placeholder="Empresa" name="empresa">
+
+            <input id="nit-edit" type="number" placeholder="Nit" name="nit">
+
+            <button class="btn-form" type="submit">
+                Crear usuario
+            </button>
+        </form>
+    </div>
+
+
+
+
+
 
     <div class="overlay-post" id="overlay-post">
         <form class="contenedor-formulario" id="formulario" autocomplete="off">
