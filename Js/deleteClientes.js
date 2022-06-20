@@ -1,10 +1,10 @@
-// const BACKEND_LOCAL_DELETE = "http://localhost:3001/clientes/";
-const URL_BACKEND_DELETE = "https://storemaria01.herokuapp.com/clientes/";
+import { URL_BACKEND } from "./constantes.js";
 
 let regexId = /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/;
 document.getElementById("app").addEventListener("click", (e) => {
   e.preventDefault();
   let idCliente = e.target.id;
+
   if (idCliente.match(regexId)) {
     let overlay = document.getElementById("overlay-alert-delete");
     overlay.classList.add("open-overlay");
@@ -17,8 +17,9 @@ document.getElementById("app").addEventListener("click", (e) => {
         overlay.removeEventListener("click", cancelOrDelete);
       }
 
+      // Elimiar usuario
       if (idBtn === "btn-confirm") {
-        fetch(`${URL_BACKEND_DELETE}${idCliente}`, {
+        fetch(`${URL_BACKEND}${idCliente}`, {
           method: "DELETE",
         })
           .then((response) => response.json())
@@ -29,6 +30,7 @@ document.getElementById("app").addEventListener("click", (e) => {
           });
       }
 
+      //  Editar usuario
       if (idBtn === "btn-edit") {
         document.getElementById("overlay-edit").classList.add("open-overlay");
 
@@ -38,7 +40,8 @@ document.getElementById("app").addEventListener("click", (e) => {
             window.location.reload();
           });
 
-        fetch(`${URL_BACKEND_DELETE}${idCliente}`)
+        // Peticion get para obtener el usuario que queremos editar
+        fetch(`${URL_BACKEND}${idCliente}`)
           .then((response) => response.json())
           .then((data) => {
             if (data) {
@@ -97,6 +100,7 @@ document.getElementById("app").addEventListener("click", (e) => {
             }
           });
 
+        // Formulario de edicion
         let formularioEdit = document.getElementById("contenedor-form-edit");
         formularioEdit.addEventListener("submit", (e) => {
           e.preventDefault();
@@ -127,7 +131,8 @@ document.getElementById("app").addEventListener("click", (e) => {
             nit: nit,
           };
 
-          fetch(`${URL_BACKEND_DELETE}${idCliente}`, {
+          // Peticion Put para ejecutar la edicion
+          fetch(`${URL_BACKEND}${idCliente}`, {
             method: "PUT",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(editado),
@@ -141,6 +146,7 @@ document.getElementById("app").addEventListener("click", (e) => {
         });
       }
     };
+
     overlay.addEventListener("click", cancelOrDelete);
   } else {
     null;

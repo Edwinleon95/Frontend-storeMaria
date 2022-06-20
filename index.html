@@ -15,9 +15,8 @@
 <body>
     <header>
         <h1 class="titles">Gestión de clientes</h1>
+        <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button>
     </header>
-
-    <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button>
 
     <div class="contenedor-clientes" id="app">
         <div>
@@ -53,48 +52,46 @@
 
 
     <div class="contenedor-overlay" id="overlay-edit">
-        <form class="contenedor-formulario" id="contenedor-form-edit" autocomplete="off">
+        <form class="contenedor-formulario form-edit" id="contenedor-form-edit" autocomplete="off">
             <div class="contenedor-btn-overlay-off">
                 <button id="off-overlay-edit">X</button>
             </div>
-            <h1 class="title">Crear nuevo usuario</h1>
-            <p class="warning">Ingrese un numero de documento valido</p>
+            <h1 class="titles">Editar usuario</h1>
+            <label >Documento*</label>
             <input id="documento-edit" name="documentoIdentidad" placeholder="Documento identidad*" type='number'>
-
-            <p class="warning">Verifique el nombre de el cliente</p>
+            <label >Nombre*</label>
             <input id="nombre-edit" name="nombre" placeholder="Nombre*" type='text'>
-
+            <label >Apellido</label>
             <input id="apellido-edit" name="apellido" placeholder="Apellido" type='text'>
-
-            <p class="warning">Por favor ingrese un correo electronico valido</p>
+            <label >Correo*</label>
             <input id="correo-edit" name="correoElectronico" placeholder="Email*" type='email'>
-
+            <label >Direccion</label>
             <input id="direccion-edit" name="direccion" placeholder="Direccion" type='text'>
-
+            <label >Telefono</label>
             <input id="telefono1-edit" name="telefono1" placeholder="Telefono 1" type='number'>
-
+            <label >Telefono</label>
             <input id="telefono2-edit" name="telefono2" placeholder="Telefono 2" type='number'>
-
+            <label >Fecha de nacimiento</label>
             <input id="fecha-edit" name="fechaDeNacimiento" type='date'>
-
+            <label >Empresa</label>
             <input id="empresa-edit" type="text" placeholder="Empresa" name="empresa">
-
+            <label >Nit</label>
             <input id="nit-edit" type="number" placeholder="Nit" name="nit">
 
-            <button class="btn-form" type="submit">
+            <button class="btn-form btn-edit" type="submit">
                 Editar usuario
             </button>
         </form>
     </div>
 
 
-    
+
     <div class="contenedor-overlay" id="overlay-post">
-        <form class="contenedor-formulario" id="formulario" autocomplete="off">
+        <form class="contenedor-formulario gap" id="formulario" autocomplete="off">
             <div class="contenedor-btn-overlay-off">
                 <button id="overlay-post-off">X</button>
             </div>
-            <h1 class="title">Crear nuevo usuario</h1>
+            <h1 class="titles">Crear nuevo usuario</h1>
             <p class="warning" id="warning-documento">Ingrese un numero de documento valido</p>
             <input id="documento" name="documentoIdentidad" placeholder="Documento identidad*" type='number'>
 
@@ -152,8 +149,8 @@
     </div>
     <!-- <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button> -->
     <script src="Js/getClientes.js" type="module"></script>
-    <script src="Js/PostClientes.js"> </script>
-    <script src="Js/deleteClientes.js"></script>
+    <script src="Js/PostClientes.js" type="module"> </script>
+    <script src="Js/deleteClientes.js" type="module"></script>
 </body>
 
 </html>

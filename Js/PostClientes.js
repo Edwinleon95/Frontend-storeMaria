@@ -1,5 +1,10 @@
-// const BACKEND_LOCAL_POST = "http://localhost:3001/clientes";
-const URL_BACKEND_POST = "https://storemaria01.herokuapp.com/clientes/";
+import { URL_BACKEND } from "./constantes.js";
+
+// abrir overlay de post nuevos clientes
+document.getElementById("swicth-overlay").addEventListener("click", (e) => {
+  e.preventDefault();
+  document.getElementById("overlay-post").classList.add("open-overlay");
+});
 
 //Validacion  input Nombre
 let inputNombre = document.getElementById("nombre");
@@ -79,9 +84,11 @@ formulario.addEventListener("submit", (e) => {
   if (nombre.length < 4) {
     document.getElementById("nombre").classList.add("warning-input");
   }
+
   if (!correoElectronico || !correoElectronico.match(regexCorreo)) {
     document.getElementById("correo").classList.add("warning-input");
   }
+
   if (!documentoIdentidad) {
     document.getElementById("documento").classList.add("warning-input");
   }
@@ -102,7 +109,7 @@ formulario.addEventListener("submit", (e) => {
       nit: nit,
     };
 
-    fetch(URL_BACKEND_POST, {
+    fetch(URL_BACKEND, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(body),
@@ -110,7 +117,9 @@ formulario.addEventListener("submit", (e) => {
       .then((response) => response.json())
       .then((data) => {
         if (data) {
-          document.getElementById("overlay-alert").classList.add("open-overlay");
+          document
+            .getElementById("overlay-alert")
+            .classList.add("open-overlay");
           document
             .getElementById("btn-alert")
             .addEventListener("click", (event) => {

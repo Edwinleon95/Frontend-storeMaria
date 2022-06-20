@@ -1,10 +1,11 @@
 // const BACKEND_LOCAL_GET = "http://localhost:3001/clientes/";
-const URL_BACKEND_GET = "https://storemaria01.herokuapp.com/clientes/";
+
+import { URL_BACKEND } from "./constantes.js";
 
 const HTMLResponse = document.querySelector("#app");
 
 //peticion get para rederizar los clientes en la base de datos
-fetch(`${URL_BACKEND_GET}true`)
+fetch(`${URL_BACKEND}true`)
   .then((response) => response.json())
   .then((users) => {
     users.forEach((user) => {
@@ -107,9 +108,3 @@ fetch(`${URL_BACKEND_GET}true`)
       HTMLResponse.appendChild(div);
     });
   });
-
-// abrir overlay de post nuevos clientes
-document.getElementById("swicth-overlay").addEventListener("click", (e) => {
-  e.preventDefault();
-  document.getElementById("overlay-post").classList.add("open-overlay");
-});

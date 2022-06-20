@@ -18,13 +18,17 @@ body {
 }
 
 header{
+   display: flex;
    text-align: center;
    background-color: #000;
    width: 100%;
+   justify-content: space-around;
+   align-items: center;
+   margin-bottom: 40px;
 }
 
 .titles{
-   margin: 0;
+   margin: 0 ;
    font-family: var(--titulos);
    font-size: 50px;
    color: #fff;
