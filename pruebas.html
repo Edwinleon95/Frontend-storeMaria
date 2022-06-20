@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="orden-alfabetico" id="orden-alfabetico">
+        <option value="a-z">
+            ordenar de la a a la z
+        </option>
+        <option value="z-a">
+            ordenar de la z a la a
+        </option>
+    </select>
+    <div>
+        <!-- <div>
+            <p>
+                Alejandro
+            </p>
+        </div>
+        <div>
+            <p>
+                Carlos
+            </p>
+        </div>
+        <div>
+            <p>
+                Manuel
+            </p>
+        </div>
+        <div>
+            <p>
+                Zapata
+            </p>
+        </div> -->
+
+        <ul id="listaCanciones">
+            <div>
+                <li >leon
+                    <p>leon</p>
+                </li>
+            </div>
+            <div>
+                <li  title="Zapata">Zapata
+
+                    <p>Zapata</p>
+                </li>
+            </div>
+            <div>
+                <li title="Carlos">Carlos
+
+                    <p>Carlos</p>
+                </li>
+            </div>
+            <div>
+                <li title="chico">chico
+
+                    <p>chico</p>
+                </li>
+            </div>
+            <div>
+                <li title="manuela">manuela
+
+                    <p>manuela</p>
+                </li>
+            </div>
+            <div>
+                <li title="Juan">Juan
+
+                    <p >Juan</p>
+                </li>
+            </div>
+            <div>
+                <li title="Andrea">Andrea
+
+                    <p>Andrea</p>
+                </li>
+            </div>
+            <div>
+                <li title="andres">andres
+
+                    <p>andres</p>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <script>
+        function ordenarLista(idUl) {
+            //Obtenemos el elemento ul
+            let ul = document.getElementById(idUl);
+            //Obtenemos la lista de li
+            let lista = ul.getElementsByTagName("li");
+            let arrayCanciones = Array.from(lista);
+            console.log(arrayCanciones)
+            arrayCanciones=arrayCanciones.slice(1,arrayCanciones.length)
+            console.log(arrayCanciones)
+            arrayCanciones.sort((a, b) => a.title.localeCompare(b.title))
+                .forEach(li => ul.appendChild(li));
+
+        }
+
+        
+        function ordenarLista2(idUl) {
+            //Obtenemos el elemento ul
+            let ul = document.getElementById(idUl);
+            //Obtenemos la lista de li
+            let lista = ul.getElementsByTagName("li");
+            let arrayCanciones = Array.from(lista);
+            arrayCanciones=arrayCanciones.slice(1,arrayCanciones.length)
+            arrayCanciones.sort((a, b) => a.title.localeCompare(b.title)).reverse()
+                .forEach(li => ul.appendChild(li));
+
+        }
+
+        document.getElementById('orden-alfabetico').addEventListener('change', (e) => {
+            e.preventDefault()
+            if (e.target.value === 'a-z') {
+                ordenarLista('listaCanciones')
+            }
+            if (e.target.value === 'z-a') {
+                ordenarLista2('listaCanciones')
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -14,6 +14,13 @@
 <body>
     <header>
         <h1 class="titles">Gestión de clientes</h1>
+        <div class="contenedor-select">
+            <select id="orden-alfabetico">
+                <option>Orden alfabetico</option>
+                <option value="a-z">A - Z</option>
+                <option value="z-a">Z - A</option>
+            </select>
+        </div>
         <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button>
     </header>
 
@@ -56,25 +63,25 @@
                 <button id="off-overlay-edit">X</button>
             </div>
             <h1 class="titles">Editar usuario</h1>
-            <label >Documento*</label>
+            <label>Documento*</label>
             <input id="documento-edit" name="documentoIdentidad" placeholder="Documento identidad*" type='number'>
-            <label >Nombre*</label>
+            <label>Nombre*</label>
             <input id="nombre-edit" name="nombre" placeholder="Nombre*" type='text'>
-            <label >Apellido</label>
+            <label>Apellido</label>
             <input id="apellido-edit" name="apellido" placeholder="Apellido" type='text'>
-            <label >Correo*</label>
+            <label>Correo*</label>
             <input id="correo-edit" name="correoElectronico" placeholder="Email*" type='email'>
-            <label >Direccion</label>
+            <label>Direccion</label>
             <input id="direccion-edit" name="direccion" placeholder="Direccion" type='text'>
-            <label >Telefono</label>
+            <label>Telefono</label>
             <input id="telefono1-edit" name="telefono1" placeholder="Telefono 1" type='number'>
-            <label >Telefono</label>
+            <label>Telefono</label>
             <input id="telefono2-edit" name="telefono2" placeholder="Telefono 2" type='number'>
-            <label >Fecha de nacimiento</label>
+            <label>Fecha de nacimiento</label>
             <input id="fecha-edit" name="fechaDeNacimiento" type='date'>
-            <label >Empresa</label>
+            <label>Empresa</label>
             <input id="empresa-edit" type="text" placeholder="Empresa" name="empresa">
-            <label >Nit</label>
+            <label>Nit</label>
             <input id="nit-edit" type="number" placeholder="Nit" name="nit">
 
             <button class="btn-form btn-edit" type="submit">
@@ -110,8 +117,6 @@
 
             <input id="input-fecha" name="fechaDeNacimiento" type='date'>
 
-            <!-- <input type="file"> -->
-
             <div class="contenedor-check">
                 <p>persona</p>
                 <label id="persona">
@@ -146,10 +151,11 @@
             </div>
         </div>
     </div>
-    <!-- <button class="btn-nuevo-cliente" id="swicth-overlay">Nuevo cliente</button> -->
+
     <script src="Js/getClientes.js" type="module"></script>
     <script src="Js/PostClientes.js" type="module"> </script>
     <script src="Js/deleteClientes.js" type="module"></script>
+    <script src="Js/funcionalidades.js"></script>
 </body>
 
 </html>

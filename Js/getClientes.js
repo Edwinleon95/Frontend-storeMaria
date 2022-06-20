@@ -10,7 +10,7 @@ fetch(`${URL_BACKEND}true`)
   .then((users) => {
     users.forEach((user) => {
       const div = document.createElement("div");
-      div.setAttribute("id", user.id);
+      div.setAttribute("title", user.nombre);
 
       const documento = document.createElement("p");
       documento.appendChild(

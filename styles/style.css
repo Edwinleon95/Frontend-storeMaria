@@ -34,6 +34,61 @@ header{
    color: #fff;
 }
 
+.contenedor-select {	
+   border:none;
+   height:30px;
+   overflow: hidden;
+   width: 230px;
+   position:relative;
+}
+
+.contenedor-select select {
+   cursor: pointer;
+   font-family: var(--titulos);
+   color: #fff;
+   background: var(--color2);
+   border: none;
+   font-size: 14px;
+   height: 30px;
+   padding: 5px;
+   width: 250px;
+   transition:.25s all ease;
+}
+
+.contenedor-select select:focus{
+   outline: none;
+}
+
+.contenedor-select::after{
+	content:"\025be";
+	display:table-cell;
+	padding-top:7px;
+	text-align:center;
+	width:30px;
+	height:30px;
+	background-color:var(--color4);
+	position:absolute;
+	top:0;
+	right:0px;	
+	pointer-events: none;
+   color: #fff;
+   transition:.25s all ease;
+}
+
+.contenedor-select:hover:after{
+   color: #000;
+   background-color: var(--color2);
+}
+
+.contenedor-select select:hover {
+   color: #000;
+   background-color: var(--color4);
+}
+
+option:checked{
+   background-color: var(--color2);
+}
+
 .btn-nuevo-cliente{
    margin: 24px;
    padding: 8px;
@@ -45,6 +100,7 @@ header{
    color: #fff;
    font-size: 20px;
    cursor: pointer;
+   transition:.25s all ease;
 }
 
 .btn-nuevo-cliente:hover{
@@ -67,6 +123,7 @@ header{
    font-family: var(--texto);
    font-weight: 900;
    font-size: 18px;
+   transition:.25s all ease;
 }
 
 .contenedor-clientes div:nth-child(1){
@@ -115,6 +172,7 @@ header{
    background-color: var(--color1);
    color: #fff;
    font-family: var(--titulos);
+   transition:.25s all ease;
 }
 
 .contenedor-clientes div div button:hover{
@@ -132,6 +190,7 @@ header{
    align-items: center;
    background-color: rgba(0, 0, 0, .5);
    top: 0;
+   transition:.25s all ease;
 }
 
 .open-overlay{
