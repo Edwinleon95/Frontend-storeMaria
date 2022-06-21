@@ -59,6 +59,7 @@ nav{
    color: #fff;
    text-align: center;
    font-family: var(--titulos);
+   font-size: 15px;
 }
 
 .searchbar:hover{
