@@ -11,6 +11,7 @@ fetch(`${URL_BACKEND}true`)
     users.forEach((user) => {
       const div = document.createElement("div");
       div.setAttribute("title", user.nombre);
+      div.setAttribute('class', 'nombre-clientes')
 
       const documento = document.createElement("p");
       documento.appendChild(

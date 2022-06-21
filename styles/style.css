@@ -17,7 +17,7 @@ body {
    flex-direction: column;
 }
 
-header{
+nav{
    display: flex;
    text-align: center;
    background-color: #000;
@@ -34,6 +34,44 @@ header{
    color: #fff;
 }
 
+.searchbar{
+   width: 25%;
+   height: 30px;
+   border: none;
+   border-radius: 20px;
+   background-color: var(--color2);
+   text-align: center;
+   font-family: var(--texto);
+   font-size: 20px;
+   font-weight: 900;
+   color: #fff;
+   transition:.25s all ease;
+}
+
+.searchbar:hover{
+   color: #000;
+}
+.searchbar:focus{
+   outline: none;
+}
+
+.searchbar::placeholder{
+   color: #fff;
+   text-align: center;
+   font-family: var(--titulos);
+}
+
+.searchbar:hover{
+   background-color: var(--color4);
+}
+
+.searchbar:hover::placeholder{
+   color: #000;
+}
+
+.searchbar:focus::placeholder{
+   color: var(--color4);
+}
 .contenedor-select {	
    border:none;
    height:30px;
@@ -71,12 +109,12 @@ header{
 	top:0;
 	right:0px;	
 	pointer-events: none;
-   color: #fff;
+   color: #000;
    transition:.25s all ease;
 }
 
 .contenedor-select:hover:after{
-   color: #000;
+   color: #fff;
    background-color: var(--color2);
 }
 

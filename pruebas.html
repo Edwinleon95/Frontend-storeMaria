@@ -6,6 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #searchbar {
+            margin-left: 15%;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        input[type=text] {
+            width: 30%;
+            -webkit-transition: width 0.15s ease-in-out;
+            transition: width 0.15s ease-in-out;
+        }
+
+        /* When the input field gets focus,
+        change its width to 100% */
+        input[type=text]:focus {
+            width: 70%;
+        }
+
+        #list {
+            font-size: 1.5em;
+            margin-left: 90px;
+        }
+
+
+
+    </style>
 </head>
 
 <body>
@@ -18,6 +45,9 @@
         </option>
     </select>
     <div>
+
+        <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals..">
+
         <!-- <div>
             <p>
                 Alejandro
@@ -41,48 +71,43 @@
 
         <ul id="listaCanciones">
             <div>
-                <li >leon
-                    <p>leon</p>
-                </li>
-            </div>
-            <div>
-                <li  title="Zapata">Zapata
+                <li title="Zapata" class="animals">Zapata
 
                     <p>Zapata</p>
                 </li>
             </div>
             <div>
-                <li title="Carlos">Carlos
+                <li title="Carlos" class="animals">Carlos
 
                     <p>Carlos</p>
                 </li>
             </div>
             <div>
-                <li title="chico">chico
+                <li title="chico" class="animals">chico
 
                     <p>chico</p>
                 </li>
             </div>
             <div>
-                <li title="manuela">manuela
+                <li title="manuela" class="animals">manuela
 
                     <p>manuela</p>
                 </li>
             </div>
             <div>
-                <li title="Juan">Juan
+                <li title="Juan" class="animals">Juan
 
-                    <p >Juan</p>
+                    <p>Juan</p>
                 </li>
             </div>
             <div>
-                <li title="Andrea">Andrea
+                <li title="Andrea" class="animals">Andrea
 
                     <p>Andrea</p>
                 </li>
             </div>
             <div>
-                <li title="andres">andres
+                <li title="andres" class="animals">andres
 
                     <p>andres</p>
                 </li>
@@ -97,21 +122,21 @@
             let lista = ul.getElementsByTagName("li");
             let arrayCanciones = Array.from(lista);
             console.log(arrayCanciones)
-            arrayCanciones=arrayCanciones.slice(1,arrayCanciones.length)
+            arrayCanciones = arrayCanciones.slice(1, arrayCanciones.length)
             console.log(arrayCanciones)
             arrayCanciones.sort((a, b) => a.title.localeCompare(b.title))
                 .forEach(li => ul.appendChild(li));
 
         }
 
-        
+
         function ordenarLista2(idUl) {
             //Obtenemos el elemento ul
             let ul = document.getElementById(idUl);
             //Obtenemos la lista de li
             let lista = ul.getElementsByTagName("li");
             let arrayCanciones = Array.from(lista);
-            arrayCanciones=arrayCanciones.slice(1,arrayCanciones.length)
+            arrayCanciones = arrayCanciones.slice(1, arrayCanciones.length)
             arrayCanciones.sort((a, b) => a.title.localeCompare(b.title)).reverse()
                 .forEach(li => ul.appendChild(li));
 
@@ -127,6 +152,21 @@
             }
         })
 
+
+        function search_animal() {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('animals');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].title.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                }
+                else {
+                    x[i].style.display = "block";
+                }
+            }
+        }
 
     </script>
 </body>

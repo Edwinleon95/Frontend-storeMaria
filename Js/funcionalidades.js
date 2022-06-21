@@ -1,5 +1,3 @@
-
-
 //Select orden alfabetico
 document.getElementById("orden-alfabetico").addEventListener("change", (e) => {
   e.preventDefault();
@@ -25,5 +23,20 @@ document.getElementById("orden-alfabetico").addEventListener("change", (e) => {
       .sort((a, b) => a.title.localeCompare(b.title))
       .reverse()
       .forEach((nombre) => divContent.appendChild(nombre));
+  }
+});
+
+//Input de busqueda por nombre
+document.getElementById("searchbar").addEventListener("input", (e) => {
+  e.preventDefault();
+  let inputValue = e.target.value.toLowerCase();
+  let listaClientes = document.getElementsByClassName("nombre-clientes");
+
+  for (i = 0; i < listaClientes.length; i++) {
+    if (!listaClientes[i].title.toLowerCase().includes(inputValue)) {
+      listaClientes[i].style.display = "none";
+    } else {
+      listaClientes[i].style.display = "flex";
+    }
   }
 });
